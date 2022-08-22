@@ -8,6 +8,7 @@ namespace CardGame
     public class Game1 : Game
     {
         private GraphicsDeviceManager _graphics;
+        private SpriteManager spriteManager;
         private SpriteBatch _spriteBatch;
 
         public Game1()
@@ -28,7 +29,7 @@ namespace CardGame
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            spriteManager.LoadContent();
         }
 
         protected override void Update(GameTime gameTime)
@@ -45,7 +46,11 @@ namespace CardGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            _spriteBatch.Begin();
+
+
+
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }

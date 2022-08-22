@@ -9,6 +9,10 @@ namespace CardGame
 {
     class Board
     {
+        // FIELDS =================================================================================================================
+        // Field - Sprites
+        private Texture2D pixel;
+
         // Field - Players
         private Player playerOne;
         private Player playerTwo;
@@ -26,16 +30,17 @@ namespace CardGame
         private Rectangle playerTwoField;
 
         // Field - Health
-        private int playerOneHealth;
-        private int playerTwoHealth;
         private Rectangle playerOneHealthBox;
         private Rectangle playerTwoHealthBox;
 
         // Field - Names
-        private string playerOneName;
-        private string playerTwoName;
         private Rectangle playerOneNameBox;
         private Rectangle playerTwoNameBox;
+
+        // PROPERTIES =============================================================================================================
+        // Properties - Players
+        public Player PlayerOne { get { return playerOne; } set { playerOne = value; } }
+        public Player PlayerTwo { get { return playerTwo; } set { playerTwo = value; } }
 
         // Properties - Decks
         public Rectangle PlayerOneDeckSpace { get { return playerOneDeckSpace; } set { playerOneDeckSpace = value; } }
@@ -57,8 +62,26 @@ namespace CardGame
         private Rectangle PlayerOneNameBox { get { return playerOneNameBox; } set { playerOneNameBox = value; } }
         private Rectangle PlayerTwoNameBox { get { return playerTwoNameBox; } set { playerTwoNameBox = value; } }
 
-        // Constructor
+        // CONSTRUCTOR ============================================================================================================
+        public Board(Player playerOne, Player playerTwo, int widthOfScreen, int heightOfScreen, Texture2D pixel)
+        {
+            // Initialize Sprites
+            this.pixel = pixel;
 
+            // Initialize Players
+            this.playerOne = playerOne;
+            this.playerTwo = playerTwo;
 
+            // Create Board Spaces
+            playerOneSide = new Rectangle(0, heightOfScreen / 2, widthOfScreen / 2, heightOfScreen / 2);
+            playerTwoSide = new Rectangle(0, 0, widthOfScreen / 2, heightOfScreen / 2);
+        }
+
+        // METHODS ================================================================================================================
+        public void Draw(SpriteBatch sb)
+        {
+            sb.Draw(pixel, playerOneSide, Color.Red);
+            sb.Draw(pixel, playerTwoSide, Color.Blue);
+        }
     }
 }

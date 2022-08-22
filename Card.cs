@@ -16,17 +16,17 @@ namespace CardGame
             Bella
         }
 
-        // Fields
+        // FIELDS =================================================================================================================
         protected string name;
         protected int manaCost;
         protected string description;
 
-        // Properties
+        // PROPERTIES =============================================================================================================
         public string Name { get { return name; } }
         public int ManaCost { get { return manaCost; } set { manaCost = value; } }
         public string Description { get { return description; } }
 
-        // Constructor
+        // CONSTRUCTOR ============================================================================================================
         public Card(string name, int manaCost, string description)
         {
             this.name = name;
@@ -34,7 +34,7 @@ namespace CardGame
             this.description = description;
         }
 
-        // Methods
+        // METHODS ================================================================================================================
         public void Play()
         {
 

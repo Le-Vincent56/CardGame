@@ -2,8 +2,17 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+
 namespace CardGame
 {
+
+    public enum Screens
+    {
+        Title,
+        Game,
+        Options,
+        Results
+    }
 
     public class Game1 : Game
     {

@@ -6,17 +6,17 @@ using Microsoft.Xna.Framework.Input;
 namespace CardGame
 {
 
-<<<<<<< HEAD
     public enum Screens
     {
         Title,
+        Menu,
+        Lore,
+        CharacterSelect,
         Game,
-        Options,
-        Results
+        Results,
+        Options
     }
 
-=======
->>>>>>> 2c50a91 (Added Card class)
     public class Game1 : Game
     {
         private GraphicsDeviceManager _graphics;

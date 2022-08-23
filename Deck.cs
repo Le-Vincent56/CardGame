@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace CardGame
 {
-    class Deck
+    public class Deck
     {
         private List<Card> deck;
         private Vector2 centerPos;

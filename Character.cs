@@ -18,7 +18,7 @@ public enum Characters
 
 namespace CardGame
 {
-    class Character
+    public class Character
     {
         private List<Card> characterDeck;
         private Characters chosenCharacter;

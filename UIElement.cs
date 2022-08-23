@@ -4,42 +4,49 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
 
 namespace CardGame
 {
-    public class SpriteManager
+    public class UIElement
     {
         // FIELDS =================================================================================================================
-        private Game1 game1;
-
-        // Fonts
-        private SpriteFont arial16;
-
-        // Miscellanious Sprites
-        private Texture2D pixel;
+        protected Texture2D sprite;
+        protected Rectangle position;
 
         // PROPERTIES =============================================================================================================
-        // Fonts
-        public SpriteFont Arial16 { get { return arial16; } set { arial16 = value; } }
+        public Rectangle Position
+        {
+            get { return position; }
+        }
 
-        // Miscellanious Sprites
-        public Texture2D Pixel { get { return pixel; } set { pixel = value; } }
+        public int X
+        {
+            get { return position.X; }
+            set { position.X = value; }
+        }
+
+        public int Y
+        {
+            get { return position.Y; }
+            set { position.Y = value; }
+        }
 
         // CONSTRUCTOR ============================================================================================================
-        public SpriteManager(Game1 game1)
+        public UIElement(Texture2D sprite, Rectangle position)
         {
-            this.game1 = game1;
+            this.sprite = sprite;
+            this.position = position;
         }
 
         // METHODS ================================================================================================================
-        public void LoadContent()
+        public void Update(Player player)
         {
-            // Fonts
-            Arial16 = game1.Content.Load<SpriteFont>("Arial16");
 
-            // Miscellanious Sprites
-            Pixel = game1.Content.Load<Texture2D>("WhitePixel");
+        }
+
+        public void Draw(SpriteBatch sb)
+        {
+            sb.Draw(sprite, position, Color.White);
         }
     }
 }

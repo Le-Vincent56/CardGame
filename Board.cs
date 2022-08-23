@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace CardGame
 {
-    class Board
+    public class Board
     {
         // FIELDS =================================================================================================================
         // Field - Sprites

@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace CardGame
 {
-    class Menu
+    public class Menu
     {
         // FIELDS =================================================================================================================
         private Game1 game;
@@ -29,6 +29,13 @@ namespace CardGame
         public Game1 Game { get => game; set => game = value; }
         public Texture2D Background { get => background; set => background = value; }
 
+        public int ButtonWidth { get { return buttonWidth; } set { buttonWidth = value; } }
+        public int ButtonHeight { get { return buttonHeight; } set { buttonHeight = value; } }
+        public int StartHeight { get { return startHeight; } set { startHeight = value; } }
+        public int MarginsInBetween { get { return marginsInBetween; } set { marginsInBetween = value; } }
+        public Button Start { get { return start; } set { start = value; } }
+        public Button Quit { get { return quit; } set { quit = value; } }
+
 
 
         // CONSTRUCTOR ============================================================================================================
@@ -36,6 +43,25 @@ namespace CardGame
         {
             this.Game = game;
             this.Background = background;
+
+            int buttonWidth = 150;
+            int buttonHeight = 30;
+
+            int startHeight = game.GraphicsManager.PreferredBackBufferHeight * 3 / 5;
+            int marginsInBetween = 30;
+
+
+            Start = new Button(
+                game.SpriteManager.Pixel,
+                game.SpriteManager.Arial16,
+                new Rectangle((game.GraphicsManager.PreferredBackBufferWidth / 2) - (buttonWidth / 2),
+                startHeight, buttonWidth, buttonHeight));
+
+            Quit = new Button(
+                game.SpriteManager.Pixel,
+                game.SpriteManager.Arial16,
+                new Rectangle((game.GraphicsManager.PreferredBackBufferWidth / 2) - (buttonWidth / 2),
+                startHeight + buttonHeight + marginsInBetween, buttonWidth, buttonHeight));
         }
 
 

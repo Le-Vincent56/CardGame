@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CardGame
 {
-    class GameManager
+    public class GameManager
     {
         // FIELDS =================================================================================================================
         private Game1 game1;
@@ -18,14 +18,19 @@ namespace CardGame
         // CONSTRUCTOR ============================================================================================================
         public GameManager(Game1 game)
         {
-            this.game = game;
-            this.gameState = GameState.Title;
+            this.game1 = game;
+            this.gameScreen = Screens.Title;
         }
 
         // METHODS ================================================================================================================
         public void Update(Menu menu)
         {
             menu.Update(game1);
+        }
+
+        public void Draw(Menu menu)
+        {
+
         }
     }
 }

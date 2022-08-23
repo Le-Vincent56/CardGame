@@ -19,29 +19,52 @@ namespace CardGame
 
     public class Game1 : Game
     {
-        private GraphicsDeviceManager _graphics;
+        // FIELDS =================================================================================================================
+        private GraphicsDeviceManager graphicsManager;
         private SpriteManager spriteManager;
-        private SpriteBatch _spriteBatch;
+        private GameManager gameManager;
+        private SpriteBatch spriteBatch;
+
+        private Menu main;
+
+        // PROPERTIES =============================================================================================================
+        public GraphicsDeviceManager GraphicsManager { get { return graphicsManager; } set { graphicsManager = value; } }
+        public GameManager GameManager { get { return gameManager; } set { gameManager = value; } }
+        public SpriteManager SpriteManager { get { return spriteManager; } set { spriteManager = value; } }
+        public SpriteBatch SpriteBatch { get { return spriteBatch; } set { spriteBatch = value; } }
+
+        public Menu Main { get { return main; } set { main = value; } }
 
         public Game1()
         {
-            _graphics = new GraphicsDeviceManager(this);
+            graphicsManager = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            // Set Window Size
+            GraphicsManager.PreferredBackBufferWidth = 1920;
+            GraphicsManager.PreferredBackBufferHeight = 1080;
+            GraphicsManager.ApplyChanges();
+
+            // Load Managers
+            GameManager = new GameManager(this);
+            SpriteManager = new SpriteManager(this);
 
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
+            SpriteBatch = new SpriteBatch(GraphicsDevice);
 
-            spriteManager.LoadContent();
+            // Load Sprites
+            SpriteManager.LoadContent();
+
+            // Load Screens/Menu
+            Main = new Menu(this, SpriteManager.Pixel);
         }
 
         protected override void Update(GameTime gameTime)
@@ -58,11 +81,11 @@ namespace CardGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            _spriteBatch.Begin();
+            SpriteBatch.Begin();
 
+            GameManager.Draw(main);
 
-
-            _spriteBatch.End();
+            SpriteBatch.End();
 
             base.Draw(gameTime);
         }

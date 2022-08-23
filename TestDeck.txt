@@ -1,0 +1,2 @@
+s|name|mana|description
+m|name|mana|description

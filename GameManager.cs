@@ -23,14 +23,39 @@ namespace CardGame
         }
 
         // METHODS ================================================================================================================
-        public void Update(Menu menu)
+        /// <summary>
+        /// Update the Game
+        /// </summary>
+        public void Update()
         {
-            menu.Update(game1);
+            
         }
 
-        public void Draw(Menu menu)
+        /// <summary>
+        /// Draw the Game
+        /// </summary>
+        public void Draw()
         {
+            switch (gameScreen)
+            {
+                case Screens.Title:
+                    break;
 
+                case Screens.Game:
+                    break;
+
+                case Screens.Lore:
+                    break;
+
+                case Screens.Options:
+                    break;
+
+                case Screens.CharacterSelect:
+                    break;
+
+                case Screens.Menu:
+                    break;
+            }
         }
     }
 }

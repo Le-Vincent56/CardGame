@@ -25,7 +25,13 @@ namespace CardGame
         private GameManager gameManager;
         private SpriteBatch spriteBatch;
 
+        private Title title;
         private Menu main;
+
+        private KeyboardState keyboardState;
+        private MouseState mouseState;
+        private KeyboardState previousKeyboardState;
+        private MouseState previousMouseState;
 
         // PROPERTIES =============================================================================================================
         public GraphicsDeviceManager GraphicsManager { get { return graphicsManager; } set { graphicsManager = value; } }
@@ -33,7 +39,13 @@ namespace CardGame
         public SpriteManager SpriteManager { get { return spriteManager; } set { spriteManager = value; } }
         public SpriteBatch SpriteBatch { get { return spriteBatch; } set { spriteBatch = value; } }
 
+        public Title Title { get { return title; } set { title = value; } }
         public Menu Main { get { return main; } set { main = value; } }
+
+        public KeyboardState KeyboardState { get { return keyboardState; } set { keyboardState = value; } }
+        public MouseState MouseState { get { return mouseState; } set { mouseState = value; } }
+        public KeyboardState PreviousKeyboardState { get { return previousKeyboardState; } set { previousKeyboardState = value; } }
+        public MouseState PreviousMouseState { get { return previousMouseState; } set { previousMouseState = value; } }
 
         public Game1()
         {
@@ -64,15 +76,43 @@ namespace CardGame
             SpriteManager.LoadContent();
 
             // Load Screens/Menu
-            Main = new Menu(this, SpriteManager.Pixel);
+            Main = new Menu(this, SpriteManager.MenuBackground);
+            Title = new Title(this, SpriteManager.TitleBackground, SpriteManager.Pixel, SpriteManager.Arial16);
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            // Get Mouse and Keyboard Input
+            KeyboardState = Keyboard.GetState();
+            MouseState = Mouse.GetState();
 
-            // TODO: Add your update logic here
+            // FSM Based on GameScreen
+            switch (GameManager.GameScreen)
+            {
+                case Screens.Title:
+                    Title.Update();
+                    break;
+
+                case Screens.Game:
+                    break;
+
+                case Screens.Lore:
+                    break;
+
+                case Screens.Options:
+                    break;
+
+                case Screens.CharacterSelect:
+                    break;
+
+                case Screens.Menu:
+                    Main.Update();
+                    break;
+            }
+
+            // Update Mouse and Keyboard States
+            PreviousKeyboardState = KeyboardState;
+            PreviousMouseState = MouseState;
 
             base.Update(gameTime);
         }
@@ -83,7 +123,28 @@ namespace CardGame
 
             SpriteBatch.Begin();
 
-            GameManager.Draw(main);
+            switch (GameManager.GameScreen)
+            {
+                case Screens.Title:
+                    Title.Draw();
+                    break;
+
+                case Screens.Game:
+                    break;
+
+                case Screens.Lore:
+                    break;
+
+                case Screens.Options:
+                    break;
+
+                case Screens.CharacterSelect:
+                    break;
+
+                case Screens.Menu:
+                    Main.Draw();
+                    break;
+            }
 
             SpriteBatch.End();
 

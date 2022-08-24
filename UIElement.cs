@@ -39,11 +39,10 @@ namespace CardGame
         }
 
         // METHODS ================================================================================================================
-        public void Update(Player player)
-        {
-
-        }
-
+        /// <summary>
+        /// Draw the UI Element
+        /// </summary>
+        /// <param name="sb">The SpriteBatch</param>
         public void Draw(SpriteBatch sb)
         {
             sb.Draw(sprite, position, Color.White);

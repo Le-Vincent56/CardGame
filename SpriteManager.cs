@@ -19,12 +19,20 @@ namespace CardGame
         // Miscellanious Sprites
         private Texture2D pixel;
 
+        // Large Sprites/Backgrounds
+        private Texture2D titleBackground;
+        private Texture2D menuBackground;
+
         // PROPERTIES =============================================================================================================
         // Fonts
         public SpriteFont Arial16 { get { return arial16; } set { arial16 = value; } }
 
         // Miscellanious Sprites
         public Texture2D Pixel { get { return pixel; } set { pixel = value; } }
+
+        // Large Sprites/Backgrounds
+        public Texture2D TitleBackground { get { return titleBackground; } set { titleBackground = value; } }
+        public Texture2D MenuBackground { get { return menuBackground; } set { menuBackground = value; } }
 
         // CONSTRUCTOR ============================================================================================================
         public SpriteManager(Game1 game1)
@@ -33,6 +41,9 @@ namespace CardGame
         }
 
         // METHODS ================================================================================================================
+        /// <summary>
+        /// Load the Content for Game1
+        /// </summary>
         public void LoadContent()
         {
             // Fonts
@@ -40,6 +51,10 @@ namespace CardGame
 
             // Miscellanious Sprites
             Pixel = game1.Content.Load<Texture2D>("WhitePixel");
+
+            // Large Sprites/Backgrounds
+            TitleBackground = game1.Content.Load<Texture2D>("TitleBackground");
+            MenuBackground = game1.Content.Load<Texture2D>("MenuBackground");
         }
     }
 }

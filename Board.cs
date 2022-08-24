@@ -78,6 +78,10 @@ namespace CardGame
         }
 
         // METHODS ================================================================================================================
+        /// <summary>
+        /// Draw the board
+        /// </summary>
+        /// <param name="sb">The SpriteBatch</param>
         public void Draw(SpriteBatch sb)
         {
             sb.Draw(pixel, playerOneSide, Color.Red);

@@ -6,7 +6,15 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-
+public enum Characters
+{
+    Bella,
+    Owen,
+    Maddy,
+    Maggie,
+    Vincent,
+    Brody
+}
 
 namespace CardGame
 {
@@ -15,9 +23,11 @@ namespace CardGame
         private List<Card> characterDeck;
         private Characters chosenCharacter;
 
-        public Character()
+        public Character(int characterNum)
         {
             characterDeck = new List<Card>();
+            chosenCharacter = (Characters)characterNum;
+            ReadDeck(ChooseCharacterFile(chosenCharacter));
         }
 
         private void ReadDeck(string fileName)
@@ -39,6 +49,39 @@ namespace CardGame
                     characterDeck.Add(mCard);
                 }
             }
+        }
+
+        private string ChooseCharacterFile(Characters chosenCharacter)
+        {
+            string filenameToReturn = "../../../TestDeck.txt";
+            switch (chosenCharacter)
+            {
+                case Characters.Bella:
+                    filenameToReturn = "../../../TestDeck.txt";
+                    break;
+
+                case Characters.Brody:
+                    filenameToReturn = "../../../TestDeck.txt";
+                    break;
+
+                case Characters.Vincent:
+                    filenameToReturn = "../../../TestDeck.txt";
+                    break;
+
+                case Characters.Maddy:
+                    filenameToReturn = "../../../TestDeck.txt";
+                    break;
+
+                case Characters.Maggie:
+                    filenameToReturn = "../../../TestDeck.txt";
+                    break;
+
+                case Characters.Owen:
+                    filenameToReturn = "../../../TestDeck.txt";
+                    break;
+            }
+
+            return filenameToReturn;
         }
     }
 }

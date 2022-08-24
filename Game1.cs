@@ -16,16 +16,6 @@ namespace CardGame
         Options
     }
 
-    public enum Characters
-    {
-        Bella,
-        Owen,
-        Maddy,
-        Maggie,
-        Vincent,
-        Brody
-    }
-
     public class Game1 : Game
     {
         // FIELDS =================================================================================================================
@@ -41,6 +31,9 @@ namespace CardGame
         private MouseState mouseState;
         private KeyboardState previousKeyboardState;
         private MouseState previousMouseState;
+
+        private Player player1;
+        private Player player2;
 
         // PROPERTIES =============================================================================================================
         public GraphicsDeviceManager GraphicsManager { get { return graphicsManager; } set { graphicsManager = value; } }

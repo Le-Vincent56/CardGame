@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CardGame
 {
-    public class Player
+    public class Player : GameObject
     {
         // FIELDS =================================================================================================================
         private int health;

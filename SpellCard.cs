@@ -27,41 +27,33 @@ namespace CardGame
         }
 
         // Methods
-        private void CheckSpellType(CardType type)
-        {
-            switch (type)
-            {
-                case CardType.Damage:
 
-                    break;
-
-                case CardType.Buff:
-
-                    break;
-
-                case CardType.Control:
-
-                    break;
-
-                case CardType.Heal:
-
-                    break;
-            }
-        }
-
-        public void Play(CardType type, Card target)
+        public GameObject Play(CardType type, GameObject target)
         {
             switch (type)
             {
                 case CardType.Damage:
                     if (target is MinionCard)
                     {
-                        
+                        MinionCard tempTarget = (MinionCard)target;
+                        tempTarget.Health -= flexNumber;
+                        target = tempTarget;
+                    }
+                    else if(target is Player)
+                    {
+                        Player tempPlayer = (Player)target;
+                        tempPlayer.Health -= flexNumber;
+                        target = tempPlayer;
                     }
                     break;
 
                 case CardType.Buff:
-
+                    if (target is MinionCard)
+                    {
+                        MinionCard tempTarget = (MinionCard)target;
+                        tempTarget.Attack += flexNumber;
+                        target = tempTarget;
+                    }
                     break;
 
                 case CardType.Control:
@@ -69,9 +61,16 @@ namespace CardGame
                     break;
 
                 case CardType.Heal:
+                    if (target is MinionCard)
+                    {
+                        MinionCard tempTarget = (MinionCard)target;
+                        tempTarget.Health += flexNumber;
+                        target = tempTarget;
+                    }
 
                     break;
             }
+            return target;
         }
 
         public void SelectTarget()

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CardGame
 {
-    class Card
+    class Card : GameObject
     { 
         // FIELDS =================================================================================================================
         protected string name;

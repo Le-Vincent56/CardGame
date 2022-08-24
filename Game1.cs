@@ -16,6 +16,16 @@ namespace CardGame
         Options
     }
 
+    public enum Characters
+    {
+        Bella,
+        Owen,
+        Maddy,
+        Maggie,
+        Vincent,
+        Brody
+    }
+
     public class Game1 : Game
     {
         // FIELDS =================================================================================================================

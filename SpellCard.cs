@@ -49,15 +49,14 @@ namespace CardGame
             }
         }
 
-        public void Play(CardType type, )
+        public void Play(CardType type, Card target)
         {
-
             switch (type)
             {
                 case CardType.Damage:
                     if (target is MinionCard)
                     {
-                        (MinionCard)target
+                        
                     }
                     break;
 

@@ -10,7 +10,6 @@ namespace CardGame
         protected string name;
         protected int manaCost;
         protected string description;
-        protected Card target;
 
         // PROPERTIES =============================================================================================================
         public string Name { get { return name; } }

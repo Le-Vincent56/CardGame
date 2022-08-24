@@ -24,6 +24,7 @@ namespace CardGame
 
         private int startHeight;
         private int marginsInBetween;
+        private int marginsFromSides;
 
 
 
@@ -35,6 +36,7 @@ namespace CardGame
         public int ButtonHeight { get { return buttonHeight; } set { buttonHeight = value; } }
         public int StartHeight { get { return startHeight; } set { startHeight = value; } }
         public int MarginsInBetween { get { return marginsInBetween; } set { marginsInBetween = value; } }
+        public int MarginsFromSides { get { return marginsFromSides; } set { marginsFromSides = value; } }
         public Button Play { get { return play; } set { play = value; } }
         public Button Options { get { return options; } set { options = value; } }
         public Button Lore { get { return lore; } set { lore = value; } }
@@ -48,33 +50,36 @@ namespace CardGame
             game1 = game;
             this.background = background;
 
-            int buttonWidth = 150;
-            int buttonHeight = 30;
+            int buttonWidth = game.GraphicsManager.PreferredBackBufferWidth / 8;
+            
+            int marginsFromSides = game.GraphicsManager.PreferredBackBufferHeight / 12;
 
-            int startHeight = game.GraphicsManager.PreferredBackBufferHeight * 3 / 5;
-            int marginsInBetween = 30;
+            int marginsInBetween = (game.GraphicsManager.PreferredBackBufferHeight / 24);
 
+            int buttonHeight = ((game.GraphicsManager.PreferredBackBufferHeight / 2) - (3 * marginsInBetween) - (2 * marginsFromSides)) / 4;
+
+            int startHeight = (game.GraphicsManager.PreferredBackBufferHeight / 2) + marginsFromSides;
 
             Play = new Button(
-                game.SpriteManager.Pixel,
+                game.SpriteManager.ButtonNormal,
                 game.SpriteManager.Arial16,
                 new Rectangle((game.GraphicsManager.PreferredBackBufferWidth / 2) - (buttonWidth / 2),
                 startHeight, buttonWidth, buttonHeight));
 
             Options = new Button(
-                game.SpriteManager.Pixel,
+                game.SpriteManager.ButtonNormal,
                 game.SpriteManager.Arial16,
                 new Rectangle((game.GraphicsManager.PreferredBackBufferWidth / 2) - (buttonWidth / 2),
                 startHeight + (buttonHeight + marginsInBetween), buttonWidth, buttonHeight));
 
             Lore = new Button(
-                game.SpriteManager.Pixel, 
+                game.SpriteManager.ButtonNormal, 
                 game.SpriteManager.Arial16, 
                 new Rectangle((game.GraphicsManager.PreferredBackBufferWidth / 2) - (buttonWidth / 2), 
                 startHeight + ((buttonHeight + marginsInBetween) * 2), buttonWidth, buttonHeight));
 
             Quit = new Button(
-                game.SpriteManager.Pixel,
+                game.SpriteManager.ButtonNormal,
                 game.SpriteManager.Arial16,
                 new Rectangle((game.GraphicsManager.PreferredBackBufferWidth / 2) - (buttonWidth / 2),
                 startHeight + ((buttonHeight + marginsInBetween) * 3), buttonWidth, buttonHeight));
@@ -122,21 +127,21 @@ namespace CardGame
             {
                 play.Draw(
                     Game1.SpriteBatch,
+                    Game1.SpriteManager.ButtonHighlight,
                     "Play",
                     play.ButtonShape,
                     Alignment.Center,
-                    Color.Red,
-                    Color.Black);
+                    Color.White);
             }
             else
             {
                 play.Draw(
                     Game1.SpriteBatch,
+                    Game1.SpriteManager.ButtonNormal,
                     "Play",
                     play.ButtonShape,
                     Alignment.Center,
-                    Color.White,
-                    Color.Black);
+                    Color.White);
             }
 
             // Draw Options Button
@@ -144,21 +149,21 @@ namespace CardGame
             {
                 options.Draw(
                     Game1.SpriteBatch,
+                    Game1.SpriteManager.ButtonHighlight,
                     "Options",
                     options.ButtonShape,
                     Alignment.Center,
-                    Color.Red,
-                    Color.Black);
+                    Color.White);
             }
             else
             {
                 options.Draw(
                     Game1.SpriteBatch,
+                    Game1.SpriteManager.ButtonNormal,
                     "Options",
                     options.ButtonShape,
                     Alignment.Center,
-                    Color.White,
-                    Color.Black);
+                    Color.White);
             }
 
             // Draw Lore Button
@@ -166,21 +171,21 @@ namespace CardGame
             {
                 lore.Draw(
                     Game1.SpriteBatch,
+                    Game1.SpriteManager.ButtonHighlight,
                     "Lore",
                     lore.ButtonShape,
                     Alignment.Center,
-                    Color.Red,
-                    Color.Black);
+                    Color.White);
             }
             else
             {
                 lore.Draw(
                     Game1.SpriteBatch,
+                    Game1.SpriteManager.ButtonNormal,
                     "Lore",
                     lore.ButtonShape,
                     Alignment.Center,
-                    Color.White,
-                    Color.Black);
+                    Color.White);
             }
 
             // Draw Quit Button
@@ -188,21 +193,21 @@ namespace CardGame
             {
                 quit.Draw(
                     Game1.SpriteBatch,
+                    Game1.SpriteManager.ButtonHighlight,
                     "Quit",
                     quit.ButtonShape,
                     Alignment.Center,
-                    Color.Red,
-                    Color.Black);
+                    Color.White);
             }
             else
             {
                 quit.Draw(
-                Game1.SpriteBatch,
-                "Quit",
-                quit.ButtonShape,
-                Alignment.Center,
-                Color.White,
-                Color.Black);
+                    Game1.SpriteBatch,
+                    Game1.SpriteManager.ButtonNormal,
+                    "Quit",
+                    quit.ButtonShape,
+                    Alignment.Center,
+                    Color.White);
             }
         }
     }

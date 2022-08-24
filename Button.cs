@@ -133,5 +133,75 @@ namespace CardGame
             // Draw the text within the box
             sb.DrawString(buttonFont, text, positionVec, textColor, 0, origin, 1, SpriteEffects.None, 0);
         }
+
+        public void Draw(SpriteBatch sb, Texture2D buttonTexture, string text, Rectangle bounds, Alignment align, Color textColor)
+        {
+            sprite = buttonTexture;
+            sb.Draw(sprite, position, Color.White);
+
+            // Create centralized location
+            Vector2 size = buttonFont.MeasureString(text);
+            Vector2 positionVec = new Vector2(bounds.Center.X, bounds.Center.Y);
+            Vector2 origin = size * 0.5f;
+
+            // Check alignments
+            if (align.HasFlag(Alignment.Left))
+            {
+                origin.X += bounds.Width / 2 - size.X / 2;
+            }
+
+            if (align.HasFlag(Alignment.Right))
+            {
+                origin.X -= bounds.Width / 2 - size.X / 2;
+            }
+
+            if (align.HasFlag(Alignment.Top))
+            {
+                origin.Y += bounds.Height / 2 - size.Y / 2;
+            }
+
+            if (align.HasFlag(Alignment.Bottom))
+            {
+                origin.Y -= bounds.Height / 2 - size.Y / 2;
+            }
+
+            // Draw the text within the box
+            sb.DrawString(buttonFont, text, positionVec, textColor, 0, origin, 1, SpriteEffects.None, 0);
+        }
+
+        public void Draw(SpriteBatch sb, Texture2D buttonTexture, string text, Rectangle bounds, Alignment align, Color boxColor, Color textColor)
+        {
+            sprite = buttonTexture;
+            sb.Draw(sprite, position, boxColor);
+
+            // Create centralized location
+            Vector2 size = buttonFont.MeasureString(text);
+            Vector2 positionVec = new Vector2(bounds.Center.X, bounds.Center.Y);
+            Vector2 origin = size * 0.5f;
+
+            // Check alignments
+            if (align.HasFlag(Alignment.Left))
+            {
+                origin.X += bounds.Width / 2 - size.X / 2;
+            }
+
+            if (align.HasFlag(Alignment.Right))
+            {
+                origin.X -= bounds.Width / 2 - size.X / 2;
+            }
+
+            if (align.HasFlag(Alignment.Top))
+            {
+                origin.Y += bounds.Height / 2 - size.Y / 2;
+            }
+
+            if (align.HasFlag(Alignment.Bottom))
+            {
+                origin.Y -= bounds.Height / 2 - size.Y / 2;
+            }
+
+            // Draw the text within the box
+            sb.DrawString(buttonFont, text, positionVec, textColor, 0, origin, 1, SpriteEffects.None, 0);
+        }
     }
 }

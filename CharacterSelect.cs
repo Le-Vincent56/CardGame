@@ -236,71 +236,71 @@ namespace CardGame
                     // Draw Back Button
                     if (back.MouseInBounds(Game1.MouseState))
                     {
-                        back.Draw(game1.SpriteBatch, "Back", back.ButtonShape, Alignment.Center, Color.Red, Color.White);
+                        back.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonHighlight, "Back", back.ButtonShape, Alignment.Center, Color.White);
                     }
                     else
                     {
-                        back.Draw(game1.SpriteBatch, "Back", back.ButtonShape, Alignment.Center, Color.Black, Color.White);
+                        back.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonNormal, "Back", back.ButtonShape, Alignment.Center, Color.White);
                     }
 
                     // Draw Bella Button
                     if (bella.MouseInBounds(Game1.MouseState))
                     {
-                        bella.Draw(game1.SpriteBatch, "Bella", bella.ButtonShape, Alignment.Center, Color.Red, Color.White);
+                        bella.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonHighlight, "Bella", bella.ButtonShape, Alignment.Center, Color.White);
                     }
                     else
                     {
-                        bella.Draw(game1.SpriteBatch, "Bella", bella.ButtonShape, Alignment.Center, Color.Black, Color.White);
+                        bella.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonNormal, "Bella", bella.ButtonShape, Alignment.Center, Color.White);
                     }
 
                     // Draw Brody Button
                     if (brody.MouseInBounds(Game1.MouseState))
                     {
-                        brody.Draw(game1.SpriteBatch, "Brody", brody.ButtonShape, Alignment.Center, Color.Red, Color.White);
+                        brody.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonHighlight, "Brody", brody.ButtonShape, Alignment.Center, Color.White);
                     }
                     else
                     {
-                        brody.Draw(game1.SpriteBatch, "Brody", brody.ButtonShape, Alignment.Center, Color.Black, Color.White);
+                        brody.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonNormal, "Brody", brody.ButtonShape, Alignment.Center, Color.White);
                     }
 
                     // Draw Maddy Button
                     if (maddy.MouseInBounds(Game1.MouseState))
                     {
-                        maddy.Draw(game1.SpriteBatch, "Maddy", maddy.ButtonShape, Alignment.Center, Color.Red, Color.White);
+                        maddy.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonHighlight, "Maddy", maddy.ButtonShape, Alignment.Center, Color.White);
                     }
                     else
                     {
-                        maddy.Draw(game1.SpriteBatch, "Maddy", maddy.ButtonShape, Alignment.Center, Color.Black, Color.White);
+                        maddy.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonNormal, "Maddy", maddy.ButtonShape, Alignment.Center, Color.White);
                     }
 
                     // Draw Maggie Button
                     if (maggie.MouseInBounds(Game1.MouseState))
                     {
-                        maggie.Draw(game1.SpriteBatch, "Maggie", maggie.ButtonShape, Alignment.Center, Color.Red, Color.White);
+                        maggie.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonHighlight, "Maggie", maggie.ButtonShape, Alignment.Center, Color.White);
                     }
                     else
                     {
-                        maggie.Draw(game1.SpriteBatch, "Maggie", maggie.ButtonShape, Alignment.Center, Color.Black, Color.White);
+                        maggie.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonNormal, "Maggie", maggie.ButtonShape, Alignment.Center, Color.White);
                     }
 
                     // Draw Owen Button
                     if (owen.MouseInBounds(Game1.MouseState))
                     {
-                        owen.Draw(game1.SpriteBatch, "Owen", owen.ButtonShape, Alignment.Center, Color.Red, Color.White);
+                        owen.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonHighlight, "Owen", owen.ButtonShape, Alignment.Center, Color.White);
                     }
                     else
                     {
-                        owen.Draw(game1.SpriteBatch, "Owen", owen.ButtonShape, Alignment.Center, Color.Black, Color.White);
+                        owen.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonNormal, "Owen", owen.ButtonShape, Alignment.Center, Color.White);
                     }
 
                     // Draw Vincent Button
                     if (vincent.MouseInBounds(Game1.MouseState))
                     {
-                        vincent.Draw(game1.SpriteBatch, "Vincent", vincent.ButtonShape, Alignment.Center, Color.Red, Color.White);
+                        vincent.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonHighlight, "Vincent", vincent.ButtonShape, Alignment.Center, Color.White);
                     }
                     else
                     {
-                        vincent.Draw(game1.SpriteBatch, "Vincent", vincent.ButtonShape, Alignment.Center, Color.Black, Color.White);
+                        vincent.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonNormal, "Vincent", vincent.ButtonShape, Alignment.Center, Color.White);
                     }
                     break;
 
@@ -308,71 +308,71 @@ namespace CardGame
                     // Draw Back Button
                     if (back.MouseInBounds(Game1.MouseState))
                     {
-                        back.Draw(game1.SpriteBatch, "Back", back.ButtonShape, Alignment.Center, Color.Blue, Color.White);
+                        back.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonHighlight, "Back", back.ButtonShape, Alignment.Center, Color.White);
                     }
                     else
                     {
-                        back.Draw(game1.SpriteBatch, "Back", back.ButtonShape, Alignment.Center, Color.Black, Color.White);
+                        back.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonNormal, "Back", back.ButtonShape, Alignment.Center, Color.White);
                     }
 
                     // Draw Bella Button
                     if (bella.MouseInBounds(Game1.MouseState))
                     {
-                        bella.Draw(game1.SpriteBatch, "Bella", bella.ButtonShape, Alignment.Center, Color.Blue, Color.White);
+                        bella.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonHighlight, "Bella", bella.ButtonShape, Alignment.Center, Color.White);
                     }
                     else
                     {
-                        bella.Draw(game1.SpriteBatch, "Bella", bella.ButtonShape, Alignment.Center, Color.Black, Color.White);
+                        bella.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonNormal, "Bella", bella.ButtonShape, Alignment.Center, Color.White);
                     }
 
                     // Draw Brody Button
                     if (brody.MouseInBounds(Game1.MouseState))
                     {
-                        brody.Draw(game1.SpriteBatch, "Brody", brody.ButtonShape, Alignment.Center, Color.Blue, Color.White);
+                        brody.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonHighlight, "Brody", brody.ButtonShape, Alignment.Center, Color.White);
                     }
                     else
                     {
-                        brody.Draw(game1.SpriteBatch, "Brody", brody.ButtonShape, Alignment.Center, Color.Black, Color.White);
+                        brody.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonNormal, "Brody", brody.ButtonShape, Alignment.Center, Color.White);
                     }
 
                     // Draw Maddy Button
                     if (maddy.MouseInBounds(Game1.MouseState))
                     {
-                        maddy.Draw(game1.SpriteBatch, "Maddy", maddy.ButtonShape, Alignment.Center, Color.Blue, Color.White);
+                        maddy.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonHighlight, "Maddy", maddy.ButtonShape, Alignment.Center, Color.White);
                     }
                     else
                     {
-                        maddy.Draw(game1.SpriteBatch, "Maddy", maddy.ButtonShape, Alignment.Center, Color.Black, Color.White);
+                        maddy.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonNormal, "Maddy", maddy.ButtonShape, Alignment.Center, Color.White);
                     }
 
                     // Draw Maggie Button
                     if (maggie.MouseInBounds(Game1.MouseState))
                     {
-                        maggie.Draw(game1.SpriteBatch, "Maggie", maggie.ButtonShape, Alignment.Center, Color.Blue, Color.White);
+                        maggie.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonHighlight, "Maggie", maggie.ButtonShape, Alignment.Center, Color.White);
                     }
                     else
                     {
-                        maggie.Draw(game1.SpriteBatch, "Maggie", maggie.ButtonShape, Alignment.Center, Color.Black, Color.White);
+                        maggie.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonNormal, "Maggie", maggie.ButtonShape, Alignment.Center, Color.White);
                     }
 
                     // Draw Owen Button
                     if (owen.MouseInBounds(Game1.MouseState))
                     {
-                        owen.Draw(game1.SpriteBatch, "Owen", owen.ButtonShape, Alignment.Center, Color.Blue, Color.White);
+                        owen.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonHighlight, "Owen", owen.ButtonShape, Alignment.Center, Color.White);
                     }
                     else
                     {
-                        owen.Draw(game1.SpriteBatch, "Owen", owen.ButtonShape, Alignment.Center, Color.Black, Color.White);
+                        owen.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonNormal, "Owen", owen.ButtonShape, Alignment.Center, Color.White);
                     }
 
                     // Draw Vincent Button
                     if (vincent.MouseInBounds(Game1.MouseState))
                     {
-                        vincent.Draw(game1.SpriteBatch, "Vincent", vincent.ButtonShape, Alignment.Center, Color.Blue, Color.White);
+                        vincent.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonHighlight, "Vincent", vincent.ButtonShape, Alignment.Center, Color.White);
                     }
                     else
                     {
-                        vincent.Draw(game1.SpriteBatch, "Vincent", vincent.ButtonShape, Alignment.Center, Color.Black, Color.White);
+                        vincent.Draw(game1.SpriteBatch, game1.SpriteManager.ButtonNormal, "Vincent", vincent.ButtonShape, Alignment.Center, Color.White);
                     }
                     break;
             }

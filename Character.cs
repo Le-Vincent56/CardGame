@@ -65,7 +65,7 @@ namespace CardGame
                 string[] lineData = fileLine.Split('|');
                 if (lineData[0] == "s")
                 {
-                   
+                    SpellCard sCard = new SpellCard(lineData[1], int.Parse(lineData[2]), lineData[3], int.Parse(lineData[4]), int.Parse(lineData[5]));
                 }
                 else
                 {

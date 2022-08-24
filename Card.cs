@@ -4,22 +4,13 @@ using System.Text;
 
 namespace CardGame
 {
-    public class Card
-    {
-        public enum CardType
-        {
-            Vincent,
-            Brody,
-            Maddy,
-            Owen,
-            Maggie,
-            Bella
-        }
-
+    class Card
+    { 
         // FIELDS =================================================================================================================
         protected string name;
         protected int manaCost;
         protected string description;
+        protected Card target;
 
         // PROPERTIES =============================================================================================================
         public string Name { get { return name; } }
@@ -41,6 +32,11 @@ namespace CardGame
         }
 
         public void Discard()
+        {
+
+        }
+
+        public void SelectTarget()
         {
 
         }

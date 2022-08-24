@@ -4,8 +4,7 @@ using Microsoft.Xna.Framework.Input;
 
 
 namespace CardGame
-{
-
+{ 
     public enum Screens
     {
         Title,

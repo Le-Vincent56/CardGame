@@ -27,33 +27,8 @@ namespace CardGame
         public Character(int characterNum)
         {
             characterDeck = new List<Card>();
-            chosenCharacter = (Characters) characterNum;
-            ChooseCharacter();
-        }
-
-        private void ChooseCharacter()
-        {
-            switch (chosenCharacter)
-            {
-                case Characters.Bella:
-
-                    break;
-
-                case Characters.Owen:
-                    break;
-
-                case Characters.Maddy:
-                    break;
-
-                case Characters.Maggie:
-                    break;
-
-                case Characters.Vincent:
-                    break;
-
-                case Characters.Brody:
-                    break;
-            }
+            chosenCharacter = (Characters)characterNum;
+            ReadDeck(ChooseCharacterFile(chosenCharacter));
         }
 
         private void ReadDeck(string fileName)
@@ -67,12 +42,47 @@ namespace CardGame
                 if (lineData[0] == "s")
                 {
                     SpellCard sCard = new SpellCard(lineData[1], int.Parse(lineData[2]), lineData[3], int.Parse(lineData[4]), int.Parse(lineData[5]));
+                    characterDeck.Add(sCard);
                 }
                 else
                 {
-
+                    MinionCard mCard = new MinionCard(lineData[1], int.Parse(lineData[2]), lineData[3], int.Parse(lineData[4]), int.Parse(lineData[5]));
+                    characterDeck.Add(mCard);
                 }
             }
+        }
+
+        private string ChooseCharacterFile(Characters chosenCharacter)
+        {
+            string filenameToReturn = "../../../TestDeck.txt";
+            switch (chosenCharacter)
+            {
+                case Characters.Bella:
+                    filenameToReturn = "../../../TestDeck.txt";
+                    break;
+
+                case Characters.Brody:
+                    filenameToReturn = "../../../TestDeck.txt";
+                    break;
+
+                case Characters.Vincent:
+                    filenameToReturn = "../../../TestDeck.txt";
+                    break;
+
+                case Characters.Maddy:
+                    filenameToReturn = "../../../TestDeck.txt";
+                    break;
+
+                case Characters.Maggie:
+                    filenameToReturn = "../../../TestDeck.txt";
+                    break;
+
+                case Characters.Owen:
+                    filenameToReturn = "../../../TestDeck.txt";
+                    break;
+            }
+
+            return filenameToReturn;
         }
     }
 }

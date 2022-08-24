@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 public enum Characters
 {
+    None,
     Bella,
     Owen,
     Maddy,

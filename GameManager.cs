@@ -28,7 +28,29 @@ namespace CardGame
         /// </summary>
         public void Update()
         {
-            
+            switch (gameScreen)
+            {
+                case Screens.Title:
+                    break;
+
+                case Screens.Menu:
+                    break;
+
+                case Screens.Lore:
+                    break;
+
+                case Screens.CharacterSelect:
+                    break;
+
+                case Screens.Game:
+                    break;
+
+                case Screens.Results:
+                    break;
+                    
+                case Screens.Options:
+                    break;
+            }
         }
 
         /// <summary>

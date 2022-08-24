@@ -81,9 +81,9 @@ namespace CardGame
         /// </summary>
         /// <param name="ms">The MouseState to compare</param>
         /// <returns>A bool representing if the button has been clicked or not</returns>
-        public bool Clicked(MouseState ms)
+        public bool Clicked(MouseState ms, MouseState prevms)
         {
-            if (MouseInBounds(ms) && ms.LeftButton == ButtonState.Pressed)
+            if (MouseInBounds(ms) && ms.LeftButton == ButtonState.Pressed && prevms.LeftButton == ButtonState.Released)
             {
                 return true;
             }

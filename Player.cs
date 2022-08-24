@@ -9,21 +9,21 @@ namespace CardGame
         // FIELDS =================================================================================================================
         private int health;
         private string name;
-        private Character characterType;
+        private Characters character;
         private Deck characterDeck;
 
         // PROPERTIES =============================================================================================================
         public int Health { get { return health; } set { health = value; } }
         public string Name { get { return name; } set { name = value; } }
-        public Character CharacterType { get { return characterType; } }
+        public Characters Character { get { return character; } set { character = value; } }
         public Deck CharacterDeck { get { return characterDeck; } }
 
         // CONSTRUCTOR ============================================================================================================
-        public Player(string name, Character characterType, Deck characterDeck)
+        public Player(string name)
         {
             health = 20;
-            this.characterType = characterType;
-            this.characterDeck = characterDeck;
+            character = Characters.None;
+            this.characterDeck = null;
         }
 
         // METHODS ================================================================================================================

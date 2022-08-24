@@ -88,22 +88,22 @@ namespace CardGame
         /// </summary>
         public void Update()
         {
-            if (play.Clicked(Game1.MouseState))
+            if (play.Clicked(Game1.MouseState, Game1.PreviousMouseState))
             {
                 Game1.GameManager.GameScreen = Screens.CharacterSelect;
             }
 
-            if (options.Clicked(Game1.MouseState))
+            if (options.Clicked(Game1.MouseState, Game1.PreviousMouseState))
             {
                 Game1.GameManager.GameScreen = Screens.Options;
             }
 
-            if (lore.Clicked(Game1.MouseState))
+            if (lore.Clicked(Game1.MouseState, Game1.PreviousMouseState))
             {
                 Game1.GameManager.GameScreen = Screens.Lore;
             }
 
-            if (quit.Clicked(Game1.MouseState))
+            if (quit.Clicked(Game1.MouseState, Game1.PreviousMouseState))
             {
                 Game1.Exit();
             }

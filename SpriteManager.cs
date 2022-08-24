@@ -22,6 +22,7 @@ namespace CardGame
         // Large Sprites/Backgrounds
         private Texture2D titleBackground;
         private Texture2D menuBackground;
+        private Texture2D characterSelectBackground;
 
         // PROPERTIES =============================================================================================================
         // Fonts
@@ -33,6 +34,7 @@ namespace CardGame
         // Large Sprites/Backgrounds
         public Texture2D TitleBackground { get { return titleBackground; } set { titleBackground = value; } }
         public Texture2D MenuBackground { get { return menuBackground; } set { menuBackground = value; } }
+        public Texture2D CharacterSelectBackground { get { return characterSelectBackground; } set { characterSelectBackground = value; } }
 
         // CONSTRUCTOR ============================================================================================================
         public SpriteManager(Game1 game1)
@@ -55,6 +57,7 @@ namespace CardGame
             // Large Sprites/Backgrounds
             TitleBackground = game1.Content.Load<Texture2D>("TitleBackground");
             MenuBackground = game1.Content.Load<Texture2D>("MenuBackground");
+            characterSelectBackground = game1.Content.Load<Texture2D>("CharacterSelectBackground");
         }
     }
 }

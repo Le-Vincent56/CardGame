@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace CardGame
 {
-    public class TextBox : UIElement
+	public class TextBox : UIElement
     {
 		// FIELDS =================================================================================================================
 		private Button okButton;
@@ -111,6 +111,40 @@ namespace CardGame
 
 			// Draw the text within the box
 			sb.DrawString(font, wrappedText, positionVec, textColor);
+		}
+
+		public void Draw(SpriteBatch sb, string enterText, Rectangle bounds, Alignment align, Color boxColor, Color textColor)
+		{
+			sb.Draw(sprite, position, boxColor);
+
+			// Create centralized location
+			Vector2 size = font.MeasureString(enterText);
+			Vector2 positionVec = new Vector2(bounds.Center.X, bounds.Center.Y);
+			Vector2 origin = size * 0.5f;
+
+			// Check alignments
+			if (align.HasFlag(Alignment.Left))
+			{
+				origin.X += bounds.Width / 2 - size.X / 2;
+			}
+
+			if (align.HasFlag(Alignment.Right))
+			{
+				origin.X -= bounds.Width / 2 - size.X / 2;
+			}
+
+			if (align.HasFlag(Alignment.Top))
+			{
+				origin.Y += bounds.Height / 2 - size.Y / 2;
+			}
+
+			if (align.HasFlag(Alignment.Bottom))
+			{
+				origin.Y -= bounds.Height / 2 - size.Y / 2;
+			}
+
+			// Draw the text within the box
+			sb.DrawString(font, enterText, positionVec, textColor, 0, origin, 1, SpriteEffects.None, 0);
 		}
 	}
 }

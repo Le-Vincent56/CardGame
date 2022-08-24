@@ -46,7 +46,8 @@ namespace CardGame
         public void Update()
         {
             Keys[] pressedKeys = Game1.KeyboardState.GetPressedKeys();
-            if (pressedKeys.Length != 0)
+            if (pressedKeys.Length != 0 || 
+                Game1.MouseState.LeftButton == ButtonState.Pressed && Game1.PreviousMouseState.LeftButton == ButtonState.Pressed)
             {
                 Game1.GameManager.GameScreen = Screens.Menu;
             }

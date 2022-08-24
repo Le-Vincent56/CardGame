@@ -48,37 +48,6 @@ namespace CardGame
                     break;
             }
         }
-
-        public void Play(CardType type, )
-        {
-
-            switch (type)
-            {
-                case CardType.Damage:
-                    if (target is MinionCard)
-                    {
-                        (MinionCard)target
-                    }
-                    break;
-
-                case CardType.Buff:
-
-                    break;
-
-                case CardType.Control:
-
-                    break;
-
-                case CardType.Heal:
-
-                    break;
-            }
-        }
-
-        public void SelectTarget()
-        {
-
-        }
     }
 }
 
